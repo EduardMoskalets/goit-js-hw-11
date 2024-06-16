@@ -19,11 +19,16 @@
 //     });
 // }
 
+
+// =================================================== var 2 ================================================================
+// ===============доступ к API =============================
 const API_KEY = '44405907-01ac5a46b548f68b2a274235a';
 const BASE_URL = 'https://pixabay.com/api/';
 
+// ========================= функция для HTTP запросов  ======================================
 export async function getPhotos(query) {
-    const url = `${BASE_URL}?key=${API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&orientation=horizontal&safesearch=true`;
+    // необходим URL к нему добавить данные ключа + базовый + параметры 
+    const url = `${BASE_URL}?key=${API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&orientation=horizontal&safesearch=true`; 
     
     try {
         const response = await fetch(url);
