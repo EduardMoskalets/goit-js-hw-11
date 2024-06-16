@@ -1,5 +1,5 @@
-export function getPhotos() {
-    const BASE_URL = 'https://pixabay.com';
+export function getPhotos(query) {
+    const BASE_URL = 'https://pixabay.com/api/';
     const API_KEY = '44405907-01ac5a46b548f68b2a274235a'
 
     const params = {
@@ -10,7 +10,7 @@ export function getPhotos() {
         key: API_KEY,   
     }
 
-    const options = ner URLSearchParams(params);
+    const options = new URLSearchParams(params);
     return fetch(`${BASE_URL}?${options}`).then(res => {
         if (!res.ok) {
             throw new Error('Error!');
